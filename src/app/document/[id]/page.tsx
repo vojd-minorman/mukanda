@@ -7,22 +7,24 @@ import { Button } from '@/components/ui/button'
 import { ArrowLeft } from 'lucide-react'
 
 type PageProps = {
-  params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
+    params: Promise<{ id: string }>;
+    searchParams: { [key: string]: string | string[] | undefined };
+  };
+  
 
-export default async function DocumentPage({ params, searchParams }: PageProps) {
-  const documentId = parseInt(params.id)
-
-  if (isNaN(documentId)) {
-    notFound()
-  }
-
-  const document = documents.find(doc => doc.id === documentId)
-
-  if (!document) {
-    notFound()
-  }
+  export default async function DocumentPage({ params, searchParams }: PageProps) {
+    const resolvedParams = await params; // Résoudre la promesse
+    const documentId = parseInt(resolvedParams.id);
+  
+    if (isNaN(documentId)) {
+      notFound();
+    }
+  
+    const document = documents.find((doc) => doc.id === documentId);
+  
+    if (!document) {
+      notFound();
+    }
 
   return (
     <div className="container mx-auto px-4 py-8">
