@@ -73,6 +73,13 @@
   body {
     @apply bg-background text-foreground;
   }
+  :root {
+    --radius: 0;
+  }
+}
+
+.checkbox-container {
+  margin-bottom: 0.75rem;
 }
 
 .fixed-buttons {

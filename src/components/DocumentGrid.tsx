@@ -25,7 +25,7 @@ export default function DocumentGrid({
 
     const matchesCategory = 
       selectedCategories.length === 0 || 
-      selectedCategories.includes(categories.find(c => c.name === doc.type)?.id ?? '');
+      selectedCategories.includes(doc.category);
 
     const matchesGenre = 
       selectedGenres.length === 0 || 

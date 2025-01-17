@@ -29,11 +29,11 @@ export default function MobileFilterModal({
           <DialogTitle>Filtres</DialogTitle>
         </DialogHeader>
         <ScrollArea className="h-[60vh] pr-4">
-          <div className="space-y-4">
+          <div className="space-y-6">
             <div>
               <h2 className="text-lg font-semibold mb-2">Catégories</h2>
               {categories.map((category) => (
-                <div key={category.id} className="flex items-center space-x-2">
+                <div key={category.id} className="flex items-center space-x-2 checkbox-container">
                   <Checkbox 
                     id={`category-${category.id}`}
                     checked={selectedCategories.includes(category.id)}
@@ -46,7 +46,7 @@ export default function MobileFilterModal({
             <div>
               <h2 className="text-lg font-semibold mb-2">Genres</h2>
               {genres.map((genre) => (
-                <div key={genre.id} className="flex items-center space-x-2">
+                <div key={genre.id} className="flex items-center space-x-2 checkbox-container">
                   <Checkbox 
                     id={`genre-${genre.id}`}
                     checked={selectedGenres.includes(genre.id)}
@@ -59,7 +59,7 @@ export default function MobileFilterModal({
             <div>
               <h2 className="text-lg font-semibold mb-2">Pays</h2>
               {countries.map((country) => (
-                <div key={country.id} className="flex items-center space-x-2">
+                <div key={country.id} className="flex items-center space-x-2 checkbox-container">
                   <Checkbox 
                     id={`country-${country.id}`}
                     checked={selectedCountries.includes(country.id)}
@@ -72,7 +72,7 @@ export default function MobileFilterModal({
             <div>
               <h2 className="text-lg font-semibold mb-2">Auteurs</h2>
               {authors.filter((author): author is string => typeof author === 'string').map((author) => (
-                <div key={author} className="flex items-center space-x-2">
+                <div key={author} className="flex items-center space-x-2 checkbox-container">
                   <Checkbox 
                     id={`author-${author}`}
                     checked={selectedAuthors.includes(author)}
