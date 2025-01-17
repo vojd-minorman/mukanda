@@ -16,20 +16,11 @@ export default function Home() {
   const [selectedGenres, setSelectedGenres] = useState<string[]>([])
   const [selectedCountries, setSelectedCountries] = useState<string[]>([])
   const [selectedAuthors, setSelectedAuthors] = useState<string[]>([])
-  const [isDarkMode, setIsDarkMode] = useState(false)
   const [sortBy, setSortBy] = useState('title_asc')
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false)
   const [isHeaderFixed, setIsHeaderFixed] = useState(false)
-  
-  const searchBarRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [isDarkMode])
+  const searchBarRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,10 +32,6 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode)
-  }
 
   const handleCategoryChange = (categoryId: string) => {
     setSelectedCategories(prev => 
@@ -90,7 +77,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+      <Navbar />
       <div className="flex flex-1">
         <Sidebar 
           className="hidden md:block w-64 p-4 bg-background border-r"

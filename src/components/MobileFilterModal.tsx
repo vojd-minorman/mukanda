@@ -35,11 +35,11 @@ export default function MobileFilterModal({
               {categories.map((category) => (
                 <div key={category.id} className="flex items-center space-x-2 checkbox-container">
                   <Checkbox 
-                    id={`category-${category.id}`}
+                    id={`mobile-category-${category.id}`}
                     checked={selectedCategories.includes(category.id)}
                     onCheckedChange={() => onCategoryChange(category.id)}
                   />
-                  <label htmlFor={`category-${category.id}`}>{category.name}</label>
+                  <label htmlFor={`mobile-category-${category.id}`}>{category.name}</label>
                 </div>
               ))}
             </div>
