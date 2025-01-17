@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -69,7 +70,11 @@ export default function DocumentGrid({
         {currentDocuments.map((doc) => (
           <Card key={doc.id}>
             <CardHeader>
-              <CardTitle>{doc.title}</CardTitle>
+              <CardTitle>
+                <Link href={`/document/${doc.id}`} className="hover:underline">
+                  {doc.title}
+                </Link>
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <p><strong>Type:</strong> {doc.type}</p>
@@ -87,7 +92,7 @@ export default function DocumentGrid({
           </Card>
         ))}
       </div>
-      <div className="mt-4 flex items-center justify-between pb-20">
+      <div className="mt-4 flex items-center justify-between">
         <p>Affichage de {startIndex + 1}-{Math.min(endIndex, sortedDocuments.length)} sur {sortedDocuments.length} documents</p>
         <div className="flex gap-2">
           <Button

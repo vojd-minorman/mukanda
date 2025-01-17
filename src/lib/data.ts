@@ -11,6 +11,8 @@ export type Document = {
   date?: string;
   isbn?: string;
   issn?: string;
+  description: string;
+  imageUrl: string;
 };
 
 export type Category = {
@@ -68,7 +70,9 @@ export const documents: Document[] = [
     country: "Cameroun",
     genre: ["Histoire", "Culture"],
     isbn: "978-1234567890",
-    date: "2022-01-15"
+    date: "2022-01-15",
+    description: "Une exploration approfondie de l'histoire riche et de la culture diversifiée de l'Afrique centrale, couvrant des siècles de traditions, de changements sociaux et de développements politiques.",
+    imageUrl: "https://example.com/afrique-centrale-histoire-culture.jpg"
   },
   {
     id: 2,
@@ -77,7 +81,9 @@ export const documents: Document[] = [
     category: "event",
     date: "2023-07-10",
     country: "Gabon",
-    genre: ["Art", "Culture"]
+    genre: ["Art", "Culture"],
+    description: "Un événement annuel célébrant les arts visuels, la musique et la danse de l'Afrique centrale, mettant en vedette des artistes locaux et internationaux.",
+    imageUrl: "https://example.com/festival-arts-libreville.jpg"
   },
   {
     id: 3,
@@ -87,7 +93,9 @@ export const documents: Document[] = [
     country: "Congo",
     genre: ["Économie"],
     issn: "1234-5678",
-    date: "2023-03-01"
+    date: "2023-03-01",
+    description: "Une publication trimestrielle analysant les tendances économiques, les politiques et les développements au Congo et dans la région environnante.",
+    imageUrl: "https://example.com/revue-economique-congo.jpg"
   },
   {
     id: 4,
@@ -98,7 +106,9 @@ export const documents: Document[] = [
     country: "Tchad",
     genre: ["Tradition", "Culture"],
     isbn: "978-0987654321",
-    date: "2021-11-30"
+    date: "2021-11-30",
+    description: "Une exploration des traditions orales riches et variées du Tchad, offrant un aperçu précieux de l'histoire et de la culture du pays.",
+    imageUrl: "https://example.com/traditions-orales-tchad.jpg"
   },
   {
     id: 5,
@@ -108,7 +118,9 @@ export const documents: Document[] = [
     director: "Paul Biya",
     country: "République centrafricaine",
     genre: ["Culture", "Art"],
-    date: "2022-09-05"
+    date: "2022-09-05",
+    description: "Une rétrospective du cinéma centrafricain, explorant son histoire, ses réalisateurs emblématiques et son impact culturel.",
+    imageUrl: "https://example.com/cinema-centrafricain.jpg"
   },
   {
     id: 6,
@@ -118,7 +130,9 @@ export const documents: Document[] = [
     creator: "Elena Ondo",
     country: "Guinée équatoriale",
     genre: ["Art", "Culture"],
-    date: "2023-02-20"
+    date: "2023-02-20",
+    description: "Une exploration de l'art contemporain en Guinée équatoriale, mettant en lumière les artistes et les mouvements qui façonnent la scène artistique du pays.",
+    imageUrl: "https://example.com/art-contemporain-guinee-equatoriale.jpg"
   },
   {
     id: 7,
@@ -129,7 +143,9 @@ export const documents: Document[] = [
     country: "Congo",
     genre: ["Science", "Tradition"],
     isbn: "978-1122334455",
-    date: "2022-06-12"
+    date: "2022-06-12",
+    description: "Un guide complet sur la flore médicinale du bassin du Congo, explorant les propriétés médicinales des plantes et leurs utilisations traditionnelles.",
+    imageUrl: "https://example.com/flore-medicinale-bassin-congo.jpg"
   },
   {
     id: 8,
@@ -140,7 +156,9 @@ export const documents: Document[] = [
     country: "Tchad",
     genre: ["Littérature"],
     isbn: "978-5566778899",
-    date: "2021-08-18"
+    date: "2021-08-18",
+    description: "Un recueil de poèmes captivants qui capturent la beauté et la complexité de la savane africaine.",
+    imageUrl: "https://example.com/poemes-savane.jpg"
   },
   {
     id: 9,
@@ -151,7 +169,9 @@ export const documents: Document[] = [
     country: "Burundi",
     genre: ["Environnement", "Science"],
     isbn: "978-2233445566",
-    date: "2023-04-22"
+    date: "2023-04-22",
+    description: "Une analyse approfondie de l'impact du changement climatique sur l'Afrique centrale, explorant ses conséquences environnementales et socio-économiques.",
+    imageUrl: "https://example.com/impact-changement-climatique.jpg"
   },
   {
     id: 10,
@@ -160,7 +180,9 @@ export const documents: Document[] = [
     category: "event",
     country: "Cameroun",
     genre: ["Culture", "Art"],
-    date: "2023-11-15"
+    date: "2023-11-15",
+    description: "Un festival annuel célébrant le meilleur du cinéma documentaire africain, mettant en vedette des films de toute l'Afrique.",
+    imageUrl: "https://example.com/festival-film-documentaire-yaounde.jpg"
   },
   {
     id: 11,
@@ -170,7 +192,9 @@ export const documents: Document[] = [
     country: "Gabon",
     genre: ["Technologie", "Économie"],
     issn: "2345-6789",
-    date: "2023-01-01"
+    date: "2023-01-01",
+    description: "Une publication mensuelle explorant les dernières avancées technologiques en Afrique et leur impact sur l'économie.",
+    imageUrl: "https://example.com/technologies-emergentes-afrique.jpg"
   },
   {
     id: 12,
@@ -181,7 +205,9 @@ export const documents: Document[] = [
     country: "Tchad",
     genre: ["Politique", "Économie"],
     isbn: "978-3344556677",
-    date: "2022-07-30"
+    date: "2022-07-30",
+    description: "Une analyse détaillée de la politique économique du Tchad, explorant ses défis et ses opportunités.",
+    imageUrl: "https://example.com/politique-economique-tchad.jpg"
   },
   {
     id: 13,
@@ -191,7 +217,9 @@ export const documents: Document[] = [
     creator: "Faustin-Archange Touadéra",
     country: "République centrafricaine",
     genre: ["Culture", "Tradition"],
-    date: "2021-12-05"
+    date: "2021-12-05",
+    description: "Une vidéo présentant les danses traditionnelles de la République centrafricaine, mettant en lumière leur signification culturelle et leur beauté.",
+    imageUrl: "https://example.com/danses-traditionnelles-rca.jpg"
   },
   {
     id: 14,
@@ -202,7 +230,9 @@ export const documents: Document[] = [
     country: "Guinée équatoriale",
     genre: ["Histoire", "Art"],
     isbn: "978-4455667788",
-    date: "2022-03-10"
+    date: "2022-03-10",
+    description: "Une exploration de l'architecture coloniale en Guinée équatoriale, examinant son histoire, son style et son héritage.",
+    imageUrl: "https://example.com/architecture-coloniale-guinee-equatoriale.jpg"
   },
   {
     id: 15,
@@ -211,7 +241,9 @@ export const documents: Document[] = [
     category: "event",
     country: "Congo",
     genre: ["Science", "Environnement"],
-    date: "2023-09-20"
+    date: "2023-09-20",
+    description: "Un symposium réunissant des experts pour discuter de la biodiversité du bassin du Congo et des efforts de conservation.",
+    imageUrl: "https://example.com/symposium-biodiversite-bassin-congo.jpg"
   },
   {
     id: 16,
@@ -221,7 +253,9 @@ export const documents: Document[] = [
     director: "André Raponda Walker",
     country: "Gabon",
     genre: ["Culture", "Art"],
-    date: "2022-11-11"
+    date: "2022-11-11",
+    description: "Un documentaire explorant l'évolution de la musique gabonaise, de ses origines traditionnelles à ses expressions contemporaines.",
+    imageUrl: "https://example.com/evolution-musique-gabonaise.jpg"
   },
   {
     id: 17,
@@ -231,7 +265,9 @@ export const documents: Document[] = [
     country: "Cameroun",
     genre: ["Économie", "Politique"],
     issn: "3456-7890",
-    date: "2023-06-30"
+    date: "2023-06-30",
+    description: "Une revue analysant les politiques agricoles en Afrique centrale et leur impact sur le développement économique et social.",
+    imageUrl: "https://example.com/revue-politiques-agricoles.jpg"
   },
   {
     id: 18,
@@ -242,7 +278,9 @@ export const documents: Document[] = [
     country: "République centrafricaine",
     genre: ["Littérature", "Tradition"],
     isbn: "978-5566778899",
-    date: "2021-10-15"
+    date: "2021-10-15",
+    description: "Un recueil de contes traditionnels du fleuve Oubangui, offrant un aperçu fascinant de la culture et des traditions de la région.",
+    imageUrl: "https://example.com/contes-fleuve-oubangui.jpg"
   },
   {
     id: 19,
@@ -252,7 +290,9 @@ export const documents: Document[] = [
     creator: "Mahamat Saleh Haroun",
     country: "Tchad",
     genre: ["Histoire", "Art"],
-    date: "2022-05-25"
+    date: "2022-05-25",
+    description: "Une vidéo explorant l'art rupestre du Tchad, offrant un aperçu de l'histoire et de la culture de la région.",
+    imageUrl: "https://example.com/art-rupestre-tchad.jpg"
   },
   {
     id: 20,
@@ -263,7 +303,9 @@ export const documents: Document[] = [
     country: "Guinée équatoriale",
     genre: ["Technologie", "Économie"],
     isbn: "978-6677889900",
-    date: "2023-08-05"
+    date: "2023-08-05",
+    description: "Une étude sur l'innovation technologique dans le secteur pétrolier de la Guinée équatoriale, explorant les défis et les opportunités.",
+    imageUrl: "https://example.com/innovation-technologique-petrolier.jpg"
   }
 ];
 
