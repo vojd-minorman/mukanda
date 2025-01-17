@@ -12,7 +12,13 @@ type PageProps = {
 }
 
 export default async function DocumentPage({ params, searchParams }: PageProps) {
-  const document = documents.find(doc => doc.id === parseInt(params.id))
+  const documentId = parseInt(params.id)
+
+  if (isNaN(documentId)) {
+    notFound()
+  }
+
+  const document = documents.find(doc => doc.id === documentId)
 
   if (!document) {
     notFound()
