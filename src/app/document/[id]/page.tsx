@@ -6,7 +6,13 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft } from 'lucide-react'
 
-export default function DocumentPage({ params }: { params: { id: string } }) {
+type Props = {
+  params: {
+    id: string
+  }
+}
+
+export default function DocumentPage({ params }: Props) {
   const document = documents.find(doc => doc.id === parseInt(params.id))
 
   if (!document) {
@@ -23,7 +29,7 @@ export default function DocumentPage({ params }: { params: { id: string } }) {
       <div className="grid md:grid-cols-2 gap-8">
         <div>
           <Image
-            src={document.imageUrl || "/placeholder.svg"}
+            src="/placeholder.svg"
             alt={document.title}
             width={500}
             height={300}
