@@ -6,13 +6,12 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft } from 'lucide-react'
 
-type Props = {
-  params: {
-    id: string
-  }
+type PageProps = {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export default function DocumentPage({ params }: Props) {
+export default async function DocumentPage({ params, searchParams }: PageProps) {
   const document = documents.find(doc => doc.id === parseInt(params.id))
 
   if (!document) {
